@@ -32,14 +32,8 @@ self.addEventListener("fetch", fetchEvent => {
 });
 
 
-importScripts("https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js");
-importScripts(
-    "https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js",
-);
-// For an optimal experience using Cloud Messaging, also add the Firebase SDK for Analytics.
-importScripts(
-    "https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js",
-);
+importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js');
 
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
