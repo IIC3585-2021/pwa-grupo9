@@ -38,10 +38,10 @@ importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js');
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
 firebase.initializeApp({
-    messagingSenderId: "YOUR-SENDER-ID",
-    apiKey: "YOUR_API_KEY",
-    projectId: "YOUR_PROJECT_ID",
-    appId: "YOUR_APP_ID",
+    messagingSenderId: "156762778864",
+    apiKey: "AIzaSyDXY4ZYf5begzkVkNMO-RDDsc_LKV6aXwM",
+    projectId: "pwa-web-9",
+    appId: "1:156762778864:web:f10675b8812b8ee806a635",
 });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
@@ -57,7 +57,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
     const notificationTitle = "Background Message Title";
     const notificationOptions = {
         body: "Background Message body.",
-        icon: "/itwonders-web-logo.png",
+        icon: "/images/icons/icon-96x96.png",
     };
 
     return self.registration.showNotification(
