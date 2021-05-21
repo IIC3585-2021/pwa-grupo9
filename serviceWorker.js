@@ -40,8 +40,12 @@ importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js');
 firebase.initializeApp({
     messagingSenderId: "156762778864",
     apiKey: "AIzaSyDXY4ZYf5begzkVkNMO-RDDsc_LKV6aXwM",
+    authDomain: 'pwa-web-9.firebaseapp.com',
+    databaseURL: 'https://pwa-web-9.firebaseio.com',
+    storageBucket: 'pwa-web-9.appspot.com',
     projectId: "pwa-web-9",
     appId: "1:156762778864:web:f10675b8812b8ee806a635",
+    measurementId: 'G-438BB1EFKF',
 });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
