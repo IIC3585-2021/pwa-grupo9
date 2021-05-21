@@ -32,8 +32,8 @@ self.addEventListener("fetch", fetchEvent => {
 });
 
 
-importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.4.1/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.6.2/firebase-messaging.js');
 
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
