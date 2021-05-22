@@ -39,11 +39,11 @@ importScripts('https://www.gstatic.com/firebasejs/8.6.2/firebase-messaging.js');
 // messagingSenderId.
 firebase.initializeApp({
     messagingSenderId: "156762778864",
-    apiKey: "AIzaSyDXY4ZYf5begzkVkNMO-RDDsc_LKV6aXwM",
-    authDomain: 'pwa-web-9.firebaseapp.com',
-    databaseURL: 'https://pwa-web-9.firebaseio.com',
-    storageBucket: 'pwa-web-9.appspot.com',
-    projectId: "pwa-web-9",
+    apiKey: "BHeDVoRds2-zlqiTOsJiHIjMQ-UZjYkoMzm9dO_0N69Y0hSXVi0dob_Xlk7klJ63z3o8pmPO3Q4sLF602ycBds0",
+    authDomain: 'pwa-grupo9.firebaseapp.com',
+    databaseURL: 'https://pwa-grupo9.firebaseio.com',
+    storageBucket: 'pwa-grupo9.appspot.com',
+    projectId: "pwa-grupo9",
     appId: "1:156762778864:web:f10675b8812b8ee806a635",
     measurementId: 'G-438BB1EFKF',
 });
