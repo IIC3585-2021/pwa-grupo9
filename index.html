@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "f338b9c2-0cd0-45c5-9d6d-3d632294d61e",
+    });
+  });
+</script>
     <!-- ios support -->
     <link rel="apple-touch-icon" href="images/icons/icon-72x72.png">
     <link rel="apple-touch-icon" href="images/icons/icon-96x96.png">
@@ -33,20 +42,5 @@
     </main>
     <script src="js/app.js"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-   var OneSignal = window.OneSignal || [];
-    var initConfig = {
-        appId: "f338b9c2-0cd0-45c5-9d6d-3d632294d61e",
-        notifyButton: {
-            enable: true
-        },
-    };
-    OneSignal.push(function () {
-        OneSignal.SERVICE_WORKER_PARAM = { scope: '/onesignal/' };
-        OneSignal.SERVICE_WORKER_PATH = 'onesignal/OneSignalSDKWorker.js'
-        OneSignal.SERVICE_WORKER_UPDATER_PATH = 'onesignal/OneSignalSDKUpdaterWorker.js'
-        OneSignal.init(initConfig);
-    });
-</script>
   </body>
 </html>
