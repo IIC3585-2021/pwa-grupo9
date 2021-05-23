@@ -1,5 +1,9 @@
 importScripts('https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js');
 
+
+
+  
+
 const staticDevCoffee = "dev-coffee-site-v1";
 const assets = [
   "/",
