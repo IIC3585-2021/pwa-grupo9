@@ -51,6 +51,23 @@ function isUserSignedIn() {
   return !!firebase.auth().currentUser;
 }
 
+function saveMessageRequest(data) {
+  $.ajax({
+    url: url_api + 'send-message',
+    crossDomain: true,
+    headers: {
+      "Access-Control-Allow-Origin":"*"
+    },
+    type: 'post',
+    dataType: 'json',
+    contentType: 'application/json',
+    success: function (dat) {
+        console.log(dat);
+    },
+    data: JSON.stringify(data)
+  })
+}
+
 // Saves a new message to your Cloud Firestore database.
 function saveMessage(messageText) {
   // Add a new message entry to the database.
@@ -66,21 +83,7 @@ function saveMessage(messageText) {
       if (currentToken) {
         var name = getUserName()
         var data = {token: currentToken, message: messageText, user: name};
-        console.log(data, JSON.stringify(data), 111)
-        $.ajax({
-          url: url_api + 'send-message',
-          crossDomain: true,
-          headers: {
-            "Access-Control-Allow-Origin":"*"
-          },
-          type: 'post',
-          dataType: 'json',
-          contentType: 'application/json',
-          success: function (dat) {
-              console.log(dat);
-          },
-          data: JSON.stringify(data)
-        })
+        saveMessageRequest(data);
       }
     })
   );
@@ -135,6 +138,23 @@ function saveImageMessage(file) {
   });
 }
 
+function saveMessagingDeviceTokenRequest(data) {
+  $.ajax({
+    url: url_api + 'new-user',
+    crossDomain: true,
+    headers: {
+      "Access-Control-Allow-Origin":"*"
+    },
+    type: 'post',
+    dataType: 'json',
+    contentType: 'application/json',
+    success: function (dat) {
+        console.log(dat);
+    },
+    data: JSON.stringify(data)
+  });
+}
+
 // Saves the messaging device token to the datastore.
 function saveMessagingDeviceToken() {
   firebase.messaging().getToken().then(function(currentToken) {
@@ -144,21 +164,7 @@ function saveMessagingDeviceToken() {
       firebase.firestore().collection('fcmTokens').doc(currentToken)
           .set({uid: firebase.auth().currentUser.uid});
       var data = {token: currentToken};
-      console.log(data, JSON.stringify(data), 2)
-      $.ajax({
-        url: url_api + 'new-user',
-        crossDomain: true,
-        headers: {
-          "Access-Control-Allow-Origin":"*"
-        },
-        type: 'post',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function (dat) {
-            console.log(dat);
-        },
-        data: JSON.stringify(data)
-      });
+      saveMessagingDeviceTokenRequest(data);
     } else {
       // Need to request permissions to show notifications.
       requestNotificationsPermissions();
